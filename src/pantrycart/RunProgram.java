@@ -1,13 +1,21 @@
 package pantrycart;
 
-public class RunProgram {
-
+/**
+ * Create a Shopping List Java Program. Create a shopping list. Display created
+ * shopping list. Update items in shopping list Remove a single item from
+ * shopping list. Destroy created shopping list.
+ */
+public class RunProgram extends JavaFunctions {
 	public static void main(String[] args) { // TODO Auto-generated method stub
 		try {
+
 			RunProgram rP = new RunProgram();
-			System.out.print(rP.greetCustomer());
-		} catch (Exception e) { // TODO: handle exception
-			System.out.print(e.getStackTrace());
+			// Create NEW List
+			rP.createShoppingList(rP.getUserInput("Enter Item:").toUpperCase());
+			// Display Items From Shopping List
+			rP.displayOutput(rP.readShoppingList());
+		} catch (Exception e) {
+			System.out.println(e.toString());
 		} finally {
 			System.exit(0);
 		}
@@ -16,7 +24,6 @@ public class RunProgram {
 	private String greetings;
 
 	public RunProgram() {
-		// TODO Auto-generated constructor stub
 		greetings = "Assalam-O-Alaikum Customer";
 	}
 
